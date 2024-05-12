@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.quiz {
+    width: 600px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #afafaf;
+    border-radius: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.numbers {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+span {
+    font-size: 28px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+    width: 80px;
+    height: 25px;
+    font-size: 26px;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+button {
+
+    border: none;
+    background-color: #806a6a;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button:active {
+    background-color: #3a1f1f;
+    transform: translateY(-2px);
 }

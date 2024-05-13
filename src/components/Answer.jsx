@@ -8,28 +8,28 @@ export default function Answer({ sum, randomNumber }) {
     function getResultValue(e) {
         setResult(e.target.value)
     }
-    async function checkResult() {
-
+  async function checkResult(e) {
+        const input = document.querySelector('input')
         if (Number(result) === sum) {
             setPoints(points + 1)
+            randomNumber()
+       
         }
-        else if (!result) {
-            setResult(0)
-        }
-        else setPoints(points - 1)
-    }
-    function Validity(e) {
-        const input = document.querySelector('input')
-        randomNumber()
-        e.preventDefault()
-        input.value = ''
+     
+      else if(Number(result) !==sum){
+        setPoints(points - 1)
+          randomNumber()
+      }
 
+        input.value = ''
+        e.preventDefault()
     }
+
     return (
         <>
-            <form onSubmit={Validity}   >
+            <form onSubmit={checkResult}   >
                 <input type="number" onChange={getResultValue} name="answer" id="answer" required />
-                <button onClick={checkResult} type="submit"  >Send Result</button>
+                <button  type="submit"  >Send Result</button>
             </form>
             <h3>Points: {points}</h3>
         </>
